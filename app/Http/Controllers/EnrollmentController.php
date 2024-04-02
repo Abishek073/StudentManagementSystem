@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Enrollment;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
-class StudentController extends Controller
+class EnrollmentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.s
      */
     public function index(): View
     {
-        $students = Student::all();
-        return view('students.index')->with('students', $students);
+        $enrollments = Enrollment::all();
+        return view('enrollments.index')->with('enrollments', $enrollments);
     }
 
     /**
@@ -23,7 +23,7 @@ class StudentController extends Controller
      */
     public function create(): View
     {
-        return view('students.create');
+        return view('enrollments.create');
     }
 
     /**
@@ -31,10 +31,9 @@ class StudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Student Added Succesfully');
+        Enrollment::create($input);
+        return redirect('enrollments')->with('flash_message', 'Enrollment Added Succesfully');
     }
 
     /**
@@ -42,8 +41,8 @@ class StudentController extends Controller
      */
     public function show(string $id): View
     {
-        $students = Student::find($id);
-        return view('students.show')->with('students', $students);
+        $enrollments = Enrollment::find($id);
+        return view('enrollments.show')->with('enrollments', $enrollments);
     }
 
     /**
@@ -51,8 +50,8 @@ class StudentController extends Controller
      */
     public function edit(string $id): View
     {
-        $students = Student::find($id);
-        return view('students.edit')->with('students', $students);
+        $enrollments = Enrollment::find($id);
+        return view('enrollments.edit')->with('enrollments', $enrollments);
     }
 
     /**
@@ -60,10 +59,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $students = Student::find($id);
+        $enrollments = Enrollment::find($id);
         $input = $request->all();
-        $students->update($input);
-        return redirect('students')->with('flash_message', 'Student Updated Successfully');
+        $enrollments->update($input);
+        return redirect('enrollments')->with('flash_message', 'Enrollment Updated Successfully');
     }
 
     /**
@@ -71,7 +70,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash_message', 'Student Deleted Successfully');
+        Enrollment::destroy($id);
+        return redirect('enrollments')->with('flash_message', 'Enrollment Deleted Successfully');
     }
 }

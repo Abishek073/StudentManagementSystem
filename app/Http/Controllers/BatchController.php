@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Batch;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
-class StudentController extends Controller
+class BatchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        $students = Student::all();
-        return view('students.index')->with('students', $students);
+        $batches = Batch::all();
+        return view('batches.index')->with('batches', $batches);
     }
 
     /**
@@ -23,7 +23,7 @@ class StudentController extends Controller
      */
     public function create(): View
     {
-        return view('students.create');
+        return view('batches.create');
     }
 
     /**
@@ -31,10 +31,9 @@ class StudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Student Added Succesfully');
+        Batch::create($input);
+        return redirect('batches')->with('flash_message', 'Batch Added Succesfully');
     }
 
     /**
@@ -42,8 +41,8 @@ class StudentController extends Controller
      */
     public function show(string $id): View
     {
-        $students = Student::find($id);
-        return view('students.show')->with('students', $students);
+        $batches = Batch::find($id);
+        return view('batches.show')->with('batches', $batches);
     }
 
     /**
@@ -51,8 +50,8 @@ class StudentController extends Controller
      */
     public function edit(string $id): View
     {
-        $students = Student::find($id);
-        return view('students.edit')->with('students', $students);
+        $batches = Batch::find($id);
+        return view('batches.edit')->with('batches', $batches);
     }
 
     /**
@@ -60,10 +59,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $students = Student::find($id);
+        $batches = Batch::find($id);
         $input = $request->all();
-        $students->update($input);
-        return redirect('students')->with('flash_message', 'Student Updated Successfully');
+        $batches->update($input);
+        return redirect('batches')->with('flash_message', 'Batch Updated Successfully');
     }
 
     /**
@@ -71,7 +70,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash_message', 'Student Deleted Successfully');
+        Batch::destroy($id);
+        return redirect('batches')->with('flash_message', 'Batch Deleted Successfully');
     }
 }
