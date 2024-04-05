@@ -33,7 +33,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $course->name }}</td>
                         <td>{{ $course->syllabus }}</td>
-                        <td>{{ $course->duration }}</td>
+                        <td>{{ $course->duration() }}</td>
 
                         <td>{{ $course->created_at ? $course->created_at->format('Y-m-d ') : '' }}</td>
                         <td>{{ $course->created_at ? $course->updated_at->format('Y-m-d ') : '' }}</td>

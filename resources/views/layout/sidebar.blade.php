@@ -78,8 +78,8 @@
         <a href="{{ url('/teachers') }}">Teacher</a>
         <a href="{{ url('/courses') }}">Course</a>
         <a href="{{ url('/batches') }}">Batch</a>
-        <a href="#about">Enrollment</a>
-        <a href="#about">Payment</a>
+        <a href="{{ url('/enrollments') }}">Enrollment</a>
+        <a href="{{ url('/payments') }}">Payment</a>
       </div>
     </div>
 
@@ -95,7 +95,7 @@
 
     </div>
 
-    <script>
+    ` <script>
       document.addEventListener("DOMContentLoaded", function() {
         var sidebarLinks = document.querySelectorAll(".sidebar a");
 
@@ -111,7 +111,7 @@
           });
         });
       });
-    </script>
+    </script>`
 </body>
 
 </html>

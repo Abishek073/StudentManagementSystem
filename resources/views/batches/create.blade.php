@@ -16,8 +16,13 @@
       </div><br>
 
       <div class="form-group">
-        <label for="">Course Name</label>
-        <input type="text" name="course_id" id="course_id" class="form-control">
+        <label for="">Course</label>
+        <!-- <input type="text" name="course_id" id="course_id" class="form-control"> -->
+        <select name="course_id" id="course_id" class="form-control">
+          @foreach($courses as $id => $name)
+          <option value="{{ $id }}">{{ $name }}</option>
+          @endforeach
+        </select>
       </div><br>
 
       <div class="form-group">

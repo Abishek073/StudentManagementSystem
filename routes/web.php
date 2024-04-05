@@ -5,7 +5,10 @@ use App\Http\Controllers\{
     StudentController,
     TeacherController,
     CourseController,
-    BatchController
+    BatchController,
+    EnrollmentController,
+    PaymentController,
+    ReportController
 };
 
 
@@ -34,4 +37,13 @@ Route::resource('/teachers', TeacherController::class);
 
 Route::resource('/courses', CourseController::class);
 
+
 Route::resource('/batches', BatchController::class);
+
+
+Route::resource('/enrollments', EnrollmentController::class);
+
+
+Route::resource('/payments', PaymentController::class);
+
+Route::get('report/report1/{pid}', [ReportController::class, 'report1']);

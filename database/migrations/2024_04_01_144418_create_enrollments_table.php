@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->string('enroll_no');
-            $table->unsignedBigInteger('batch_id');
+            $table->unsignedBigInteger('batch_id'); //for foreign key
             $table->unsignedBigInteger('student_id');
             $table->date('join_date');
             $table->double('fee');

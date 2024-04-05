@@ -12,4 +12,9 @@ class Course extends Model
     protected $table = 'courses';
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'syllabus', 'duration']; //from courses table in database
+
+    public function duration()
+    {
+        return $this->duration . " months"; //to add months in course duration
+    }
 }

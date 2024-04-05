@@ -32,7 +32,7 @@
                     <tr style="text-align: center;">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $batch->name }}</td>
-                        <td>{{ $batch->course_id }}</td>
+                        <td>{{ $batch->course->name}}</td>
                         <td>{{ $batch->start_date }}</td>
 
                         <td>{{ $batch->created_at ? $batch->created_at->format('Y-m-d ') : '' }}</td>

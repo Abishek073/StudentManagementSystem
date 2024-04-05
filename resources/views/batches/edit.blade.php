@@ -13,13 +13,17 @@
       <input type="hidden" name="id" value="{{ $batches->id }}" id="id">
 
       <div class="form-group">
-        <label for="">Name</label>
+        <label for="">Batch Name</label>
         <input type="text" name="name" id="name" value="{{ $batches->name }}" class="form-control">
       </div><br>
 
       <div class="form-group">
-        <label for="">Course Name</label>
-        <input type="text" name="course_id" id="course_id" value="{{ $batches->course_id }}" class="form-control">
+        <label for="">Course</label>
+        <select name="course_id" id="course_id" class="form-control">
+          @foreach($courses as $id => $name)
+          <option value="{{ $id }}">{{ $name }}</option>
+          @endforeach
+        </select>
       </div><br>
 
       <div class="form-group">
@@ -30,6 +34,8 @@
 
 
       <button type="submit" class="btn btn-success px-4">Update</button>
+
+      <a href="{{ url('batches') }}"> <button type="submit" class="btn btn-success px-4">Back</button></a>
 
 
     </form>
