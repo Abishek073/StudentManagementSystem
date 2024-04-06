@@ -15,15 +15,13 @@
         <br>
         <br>
         <div class="table-responsive">
-            <table class="table table-hover" style="width: 130%;">
+            <table class="table table-hover" style="width: 100%;">
                 <thead style="text-align: center;">
                     <tr>
                         <th>Sno.</th>
                         <th>Name</th>
                         <th>Course</th>
                         <th>Start Date</th>
-                        <th>Created Date</th>
-                        <th>Updated Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -34,9 +32,6 @@
                         <td>{{ $batch->name }}</td>
                         <td>{{ $batch->course->name}}</td>
                         <td>{{ $batch->start_date }}</td>
-
-                        <td>{{ $batch->created_at ? $batch->created_at->format('Y-m-d ') : '' }}</td>
-                        <td>{{ $batch->created_at ? $batch->updated_at->format('Y-m-d ') : '' }}</td>
                         <td>
                             <a href="{{ url('/batches/' . $batch->id) }}" title="View batch"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
 

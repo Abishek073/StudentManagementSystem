@@ -29,8 +29,8 @@
                     @foreach($payments as $payment)
                     <tr style="text-align: center;">
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $payment->enrollment->enroll_no}}</td>
-                        <td>{{ $payment->created_at->format('Y-m-d ')   }}</td>
+                        <td>{{ $payment->enrollment->enroll_no }}</td>
+                        <td>{{ $payment->paid_date }}</td>
                         <td>{{ $payment->amount }}</td>
 
 

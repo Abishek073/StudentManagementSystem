@@ -13,8 +13,13 @@
       <input type="hidden" name="id" value="{{ $payments->id }}" id="id">
 
       <div class="form-group">
-        <label for="">Enroll no</label>
+        <label for="">Enrollment no</label>
         <input type="text" name="enroll_id" id="enroll_id" value="{{ $payments->enrollment->enroll_no }}" class="form-control">
+      </div><br>
+
+      <div class="form-group">
+        <label for="">Paid Date</label>
+        <input type="text" name="paid_date" id="paid_date" value="{{ $payments->paid_date }}" class="form-control">
       </div><br>
 
       <div class="form-group">

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('enrollment_id');
             $table->date('paid_date');
             $table->double('amount');
+            $table->foreign('enrollment_id')->references('id')->on('enrollments')->onDelete('cascade');
             $table->timestamps();
         });
     }

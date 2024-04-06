@@ -24,8 +24,6 @@
                         <th>Student</th>
                         <th>Join Date</th>
                         <th>Fee</th>
-                        <th>Created Date</th>
-                        <th>Updated Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -38,9 +36,6 @@
                         <td>{{ $enrollment->student->name }}</td>
                         <td>{{ $enrollment->join_date }}</td>
                         <td>{{ $enrollment->fee }}</td>
-
-                        <td>{{ $enrollment->created_at ? $enrollment->created_at->format('Y-m-d ') : '' }}</td>
-                        <td>{{ $enrollment->created_at ? $enrollment->updated_at->format('Y-m-d ') : '' }}</td>
                         <td>
                             <a href="{{ url('/enrollments/' . $enrollment->id) }}" title="View enrollment"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
 
